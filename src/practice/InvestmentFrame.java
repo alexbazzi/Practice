@@ -28,7 +28,7 @@ public class InvestmentFrame extends JFrame
         createButton();
         createPanel();
         
-        this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+        setSize(FRAME_WIDTH, FRAME_HEIGHT);
         
     }
     
@@ -53,6 +53,7 @@ public class InvestmentFrame extends JFrame
                 double rate = Double.parseDouble(rateField.getText());
                 double interest = account.getBalance()*(rate/100);
                 account.deposit(interest);
+                resultLabel.setText("balance: " + account.getBalance());
             }
         }
         ActionListener listener = new AddInterestListener();

@@ -13,7 +13,7 @@ public class InvestmentViewer3
 {
     public static void main(String[] args)
     {
-        JFrame frame = new JFrame();
+        InvestmentFrame frame = new InvestmentFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
