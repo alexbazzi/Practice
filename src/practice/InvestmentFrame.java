@@ -14,6 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JScrollBar;
 
 /**
  *
@@ -25,7 +26,7 @@ public class InvestmentFrame extends JFrame
     {
         account = new BankAccount(INITIAL_BALANCE);
         resultArea = new JTextArea(AREA_ROWS, AREA_COLUMNS);
-        resultArea.setEditable(false);
+        resultArea.setEditable(true);
         
         createTextField();
         createButton();
@@ -42,6 +43,9 @@ public class InvestmentFrame extends JFrame
         final int FIELD_WIDTH = 10;
         rateField = new JTextField(FIELD_WIDTH);
         rateField.setText("" + DEFAULT_RATE);
+        
+        balanceLabel = new JLabel("Balance: ");
+        
         
     }
     
@@ -69,14 +73,16 @@ public class InvestmentFrame extends JFrame
         panel.add(rateLabel);
         panel.add(rateField);
         panel.add(button);
+        panel.add(balanceLabel);
         panel.add(resultArea);
-       // JScrollPane scrollpane = new JScrollPane(resultArea);
-       // panel.add(scrollpane);
+        JScrollPane scrollpane = new JScrollPane(resultArea);
+        panel.add(scrollpane);
         add(panel);
     }
     
     private JLabel rateLabel;
     private JTextField rateField;
+    private JLabel balanceLabel;
     private JButton button;
     private JTextArea resultArea;
     private JPanel panel;
@@ -88,6 +94,6 @@ public class InvestmentFrame extends JFrame
     private static final double DEFAULT_RATE = 5;
     private static final double INITIAL_BALANCE = 1000;
     
-    private static final int AREA_ROWS = 20;
+    private static final int AREA_ROWS = 10;
     private static final int AREA_COLUMNS = 30;
 }
