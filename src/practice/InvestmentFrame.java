@@ -10,8 +10,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 /**
  *
@@ -22,7 +24,8 @@ public class InvestmentFrame extends JFrame
     public InvestmentFrame()
     {
         account = new BankAccount(INITIAL_BALANCE);
-        resultLabel = new JLabel("Balance: " + account.getBalance());
+        resultArea = new JTextArea(AREA_ROWS, AREA_COLUMNS);
+        resultArea.setEditable(false);
         
         createTextField();
         createButton();
@@ -53,7 +56,7 @@ public class InvestmentFrame extends JFrame
                 double rate = Double.parseDouble(rateField.getText());
                 double interest = account.getBalance()*(rate/100);
                 account.deposit(interest);
-                resultLabel.setText("balance: " + account.getBalance());
+                resultArea.append(account.getBalance() + "\n");
             }
         }
         ActionListener listener = new AddInterestListener();
@@ -66,14 +69,16 @@ public class InvestmentFrame extends JFrame
         panel.add(rateLabel);
         panel.add(rateField);
         panel.add(button);
-        panel.add(resultLabel);
-        this.add(panel);
+        panel.add(resultArea);
+       // JScrollPane scrollpane = new JScrollPane(resultArea);
+       // panel.add(scrollpane);
+        add(panel);
     }
     
     private JLabel rateLabel;
     private JTextField rateField;
     private JButton button;
-    private JLabel resultLabel;
+    private JTextArea resultArea;
     private JPanel panel;
     private BankAccount account;
     
@@ -82,4 +87,7 @@ public class InvestmentFrame extends JFrame
     
     private static final double DEFAULT_RATE = 5;
     private static final double INITIAL_BALANCE = 1000;
+    
+    private static final int AREA_ROWS = 20;
+    private static final int AREA_COLUMNS = 30;
 }
