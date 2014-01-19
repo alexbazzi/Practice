@@ -33,6 +33,10 @@ public class BankAccount
         balance += interest;
     }
     
+    public double getInterest(){
+        return interest;
+    }
+    
     public double getBalance()
     {
         return balance;

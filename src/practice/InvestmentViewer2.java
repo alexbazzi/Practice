@@ -15,7 +15,7 @@ import javax.swing.JButton;
  *
  * @author Alex
  */
-public class InvestmentViewer2 extends InvestmentViewer
+public class InvestmentViewer2 extends InvestmentViewer1
 {
     public static void main(String[] args)
     {

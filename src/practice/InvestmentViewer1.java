@@ -13,7 +13,7 @@ import javax.swing.JButton;
  *
  * @author Alex
  */
-public class InvestmentViewer
+public class InvestmentViewer1
 {
     public static void main(String[] args)
     {
@@ -41,7 +41,7 @@ public class InvestmentViewer
         
     }
     
-    private static final double INITIAL_BALANCE = 1000;
-    private static final int FRAME_WIDTH = 100;
-    private static final int FRAME_HEIGHT = 60;
+    static final double INITIAL_BALANCE = 1000;
+    static final int FRAME_WIDTH = 100;
+    static final int FRAME_HEIGHT = 60;
 }
