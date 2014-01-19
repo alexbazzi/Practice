@@ -62,7 +62,7 @@ public class InvestmentFrame extends JFrame
     
     public void createPanel()
     {
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.add(rateLabel);
         panel.add(rateField);
         panel.add(button);
