@@ -9,9 +9,13 @@ package practice;
  *
  * @author alexbazzi
  */
-public class justtosee {
+public class Retarded {
+    
     public static void main(String[] args)
     {
-        System.out.println("Imma fagit");
+        String ourClass =  new String("retarded");
+        if(ourClass.equals("retarded")) {
+            System.out.println("ur a phagit");
+        }
     }
-}
+ }
